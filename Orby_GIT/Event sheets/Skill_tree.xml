@@ -1,0 +1,951 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Skill_tree</name>
+    <events>
+        <variable comment="Sec.(30MIN)" constant="0" name="integrità" sid="85738187151671" static="0" type="number">18000</variable>
+        <variable constant="0" name="dna" sid="1112500009167499" static="0" type="number">0</variable>
+        <event-group description="" sid="4400444932377934" title="Progressione">
+            <sub-events>
+                <event-block sid="6345471119596524">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="4991944006799526" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="8441403769167932" type="System">
+                            <param id="0" name="Variable">integrità</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7922298357193928">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3460583120061633" type="System">
+                            <param id="0" name="Variable">integrità</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="3203101664314217" type="System">
+                            <param id="0" name="Seconds">4.0</param>
+                        </action>
+                        <action id="-26" name="Restart layout" sid="5445208587959577" type="System" />
+                        <action id="-21" name="Reset global variables" sid="4510036345298659" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="8199564451325567">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="94898455765788" type="System">
+                            <param id="0" name="Interval (seconds)">10.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="6036088700135302" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1766589330783429" title="Skill_Tree1">
+            <sub-events>
+                <comment>Rotazione</comment>
+                <event-block sid="3591975928581838">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="5996365233620076" type="Touch">
+                            <param id="0" name="Object">rotazione</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="1345556274568374" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6794879848846152" type="rotazione">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="1682143353863601" type="rotazione">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="3898103065616771" type="Planet">
+                            <param id="0" name="Speed">10</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="6057336399767992" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="1139809363923878" type="rotazione">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2197784424877608">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="1096767538029474" type="System">
+                            <param id="0" name="Interval (seconds)">5</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="3825331729779071" type="rotazione">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="9449170344698082" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5607735083721486">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="4802341089268587" type="System">
+                                    <param id="0" name="Interval (seconds)">10.0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="4725294045040882" type="System">
+                                    <param id="0" name="Variable">integrità</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Gravità</comment>
+                <event-block sid="2988177251916873">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="9060215309174349" type="Touch">
+                            <param id="0" name="Object">gravità</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7967156411986415" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="8413885457235619" type="gravità">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="1120627254850401" type="gravità">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="3402639243327375" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="4082992940267461" type="gravità">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8737338823042529">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="8895880756932355" type="gravità">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="1750289792991495" type="System">
+                            <param id="0" name="Interval (seconds)">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="487278757928104" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="5856468957987043" type="System">
+                            <param id="0" name="Variable">integrità</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6441076418464278">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="2990220358049918" type="rotazione">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="4872016457703607" type="Metalli">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="247818614782022" type="nucleo">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Metalli</comment>
+                <event-block sid="7079381490483055">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="2922962354223916" type="Metalli">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="1217359890503344" type="gravità">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="1510528744160587" type="crosta">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="5224445392274659" type="crostaterres">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1599433548750284">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="223901138240762" type="Touch">
+                            <param id="0" name="Object">Metalli</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="1251249775610517" type="Metalli">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="343551830366743" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="907847739320793" type="Metalli">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2801984189648971" type="Metalli">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="9042994780227486" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="3786892078078896" type="Metalli">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4236267706583741">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="5520111209775889" type="Metalli">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="6028759469538989" type="System">
+                            <param id="0" name="Interval (seconds)">15</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="7794669612036048" type="System">
+                            <param id="0" name="Variable">integrità</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2472617987379548">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="2651274512069202" type="Metalli">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="2512059751748634" type="vulcani">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="8776583198086383" type="vulcano">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Crosta</comment>
+                <event-block sid="2656347441632759">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4079568467475425" type="Touch">
+                            <param id="0" name="Object">crosta</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="1319157517606671" type="crosta">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8453586651347508" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2851327312957541" type="crosta">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="7656519019619468" type="crosta">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="7192832021069744" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">30</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="4048450321625927" type="crosta">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="166578167050874">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="7203529759093901" type="crosta">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="5791772830662339" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="7835952816490801" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8721919728659968">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="2184756387963221" type="System">
+                                    <param id="0" name="Interval (seconds)">10.0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="6653879352044504" type="System">
+                                    <param id="0" name="Variable">integrità</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="917424455622947">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="4608489247507897" type="crosta">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="2952347792609702" type="Ghiaccio">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2030224861889472" type="Ghiac">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="4029437809784892" type="AttrGravit">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="570358715957483" type="AttGra">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Vulcani</comment>
+                <event-block sid="5333879380675351">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="1732139268466495" type="Touch">
+                            <param id="0" name="Object">vulcani</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="7920035422934386" type="vulcani">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8503062073501724" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">20</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="283345044643074" type="vulcani">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2219933503576847" type="vulcani">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="5886259547271918" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">20</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="7691097549025622" type="vulcani">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5212994612552498">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="3226711040820534" type="vulcani">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="6143551781402463" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="996223833756267" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8426181439409461">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="3119340897115021" type="System">
+                                    <param id="0" name="Interval (seconds)">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="6189906816553832" type="System">
+                                    <param id="0" name="Variable">integrità</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="113358699088024">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="6539870213162965" type="vulcani">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="4803804936983329" type="vapore">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="6409526880062578" type="vapoacq">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Ghiaccio</comment>
+                <event-block sid="4209112131183153">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="3719915372591189" type="Touch">
+                            <param id="0" name="Object">Ghiaccio</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="6325775679631812" type="Ghiaccio">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6374477771832845" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">60</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7652401164765142" type="Ghiaccio">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="9318205053157149" type="Ghiaccio">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="8425759070726858" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">60</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="8172075621575334" type="Ghiaccio">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7607158068309105">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="9473992444883502" type="Ghiaccio">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="5440543698757091" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="6605209830611496" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8140479184869301">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="5357639106964985" type="System">
+                                    <param id="0" name="Interval (seconds)">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="7919410753814142" type="System">
+                                    <param id="0" name="Variable">integrità</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="194250658383442">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="2388200398032216" type="Ghiaccio">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="9493001630070124" type="Acquaa">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9910042590867074" type="Acqua">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Attrazione Gravitazionale</comment>
+                <event-block sid="2522211723637485">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="1351087292459732" type="Touch">
+                            <param id="0" name="Object">AttrGravit</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="5312378161460373" type="AttrGravit">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="304112072161206" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">200</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9236059389513215" type="AttrGravit">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="8689911480387583" type="AttrGravit">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="8323613156683726" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">200</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="7042318470759644" type="AttrGravit">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4755644291722671">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="2201713719316642" type="AttrGravit">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="9043954215924117" type="System">
+                            <param id="0" name="Interval (seconds)">2.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="5940237094288101" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="855764716161737">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="5250340396282005" type="System">
+                                    <param id="0" name="Interval (seconds)">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="495579250641577" type="System">
+                                    <param id="0" name="Variable">integrità</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5791173063695561">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="2423520514971855" type="AttrGravit">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="6153664227450061" type="ScudoMagnetico">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3249983903533916" type="Scudomag">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Vapore Acqueo</comment>
+                <event-block sid="9973263224379282">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="6706255808287431" type="Touch">
+                            <param id="0" name="Object">vapore</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="2610259093706495" type="vapore">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="484962533889689" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">50</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="8221984378674246" type="vapore">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="780249147662194" type="vapore">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="6888702100531684" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">50</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="1270041880389221" type="vapore">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9337752001269572">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="6363896536443085" type="vapore">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="4042339032984868" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="653420198519312" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6791288963701418">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="8988098445964474" type="System">
+                                    <param id="0" name="Interval (seconds)">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="8740950060986161" type="System">
+                                    <param id="0" name="Variable">integrità</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9114123447617812">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="2285611496006141" type="vapore">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="4151118672668158" type="Nuvol">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9659831780895515" type="Nuvole">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Nuvole</comment>
+                <event-block sid="9418044475332261">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="5301514083937276" type="Touch">
+                            <param id="0" name="Object">Nuvol</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="4315816921899794" type="Nuvol">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="3632221691414429" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1085228433245908" type="Nuvol">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2466328588570809" type="Nuvol">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="1745899861993287" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="6650599708517394" type="Nuvol">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="97339921488449">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="4592753254968149" type="Nuvol">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="9597748715380871" type="System">
+                            <param id="0" name="Interval (seconds)">10.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="8200447183200256" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8591856372891311">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="7000015350186397" type="System">
+                                    <param id="0" name="Interval (seconds)">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="2927642058731068" type="System">
+                                    <param id="0" name="Variable">integrità</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Acqua</comment>
+                <event-block sid="9327876552888485">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4614177714226197" type="Touch">
+                            <param id="0" name="Object">Acquaa</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="776636179582388" type="Acquaa">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2669482999348438" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">300</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="396064428431999" type="Acquaa">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="3240296924626996" type="Acquaa">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="1627438567709915" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">300</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="418218781665738" type="Acquaa">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3028408105671022">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="8862574902485782" type="Acquaa">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="5475048613828112" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="5184433097073698" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">50</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5141756802282779">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="5906020966670856" type="System">
+                                    <param id="0" name="Interval (seconds)">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="7369419326566222" type="System">
+                                    <param id="0" name="Variable">integrità</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Scudo Magnetico</comment>
+                <event-block sid="7704682057205889">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="8958768484179781" type="Touch">
+                            <param id="0" name="Object">ScudoMagnetico</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="2675498071750178" type="ScudoMagnetico">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2395852713783369" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">300</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="595748590959149" type="ScudoMagnetico">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2415658403392121" type="ScudoMagnetico">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="588068228306762" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">300</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="7963834405634364" type="ScudoMagnetico">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4933617545581057">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="2707107734309082" type="ScudoMagnetico">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="2404901902835253" type="System">
+                            <param id="0" name="Interval (seconds)">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="9491736493286374" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="922324268794474">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="6990786217982803" type="System">
+                                    <param id="0" name="Interval (seconds)">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="1384737404532551" type="System">
+                                    <param id="0" name="Variable">integrità</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Eubatteri</comment>
+                <event-block sid="2929152743441131">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="8005185796378077" type="Touch">
+                            <param id="0" name="Object">eubatteri</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="3262254064722374" type="eubatteri">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9455143813086359" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">450</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6575099945991587" type="eubatteri">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="5533760216173205" type="eubatteri">
+                            <param id="0" name="Animation">&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="7526722840934656" type="System">
+                            <param id="0" name="Variable">dna</param>
+                            <param id="1" name="Value">450</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="131107171809284" type="eubatteri">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2180330681202878">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="3597652818371798" type="eubatteri">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="7921414254466867" type="System">
+                            <param id="0" name="Seconds">4.0</param>
+                        </action>
+                        <action id="-26" name="Restart layout" sid="2030767131090609" type="System" />
+                        <action id="-21" name="Reset global variables" sid="7082250757598199" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="6550444103378448">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="2025839939940635" type="ScudoMagnetico">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="5787525971977905" type="Acquaa">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="5624643840281904" type="Nuvol">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="930006155822463" type="eubatteri">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4332015282948654" type="eubatte">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>End SkillTree1</comment>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="5515133660289452" title="Skill_Tree2">
+            <sub-events>
+                <comment></comment>
+                <comment></comment>
+                <comment></comment>
+                <comment></comment>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="9370523942544165" title="Skill_Tree3" />
+    </events>
+</c2eventsheet>

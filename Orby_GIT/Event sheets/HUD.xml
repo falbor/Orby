@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>HUD</name>
+    <events>
+        <include>Skill_tree</include>
+        <variable constant="0" name="Tap" sid="9545169534743891" static="0" type="number">0</variable>
+        <comment>Time Warp</comment>
+        <event-block sid="3415214353940075">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="1849300853564231" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="1312682931782913" type="Planet_Integrity">
+                    <param id="0" name="Text">&quot;INTEGRITA&apos;: &quot;&amp;integrità</param>
+                </action>
+                <action id="0" name="Set text" sid="416762683665128" type="DNA">
+                    <param id="0" name="Text">&quot;DNA: &quot;&amp;dna</param>
+                </action>
+                <action id="4" name="Set font color" sid="3603213778072442" type="Skill_TXT">
+                    <param id="0" name="Color">rgb(255, 255,255)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5200351938350484">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="9819645400650507" type="Touch">
+                            <param id="0" name="Object">Skill_Button1</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9035785540851876" type="Skill_Button1">
+                            <param id="0" name="Instance variable">Click</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="19457328561184" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="7640816034634141" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="2764595640519634" type="System">
+                            <param id="0" name="Layer">4</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="5235148562638559" type="DNA">
+                            <param id="0" name="Layer">4</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="4179762413998795" type="Planet_Integrity">
+                            <param id="0" name="Layer">4</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="2032908040595755" type="Skill_Button1">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8094681586489669">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4953904401690006" type="Touch">
+                            <param id="0" name="Object">Exit_Menu</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="3532175145797999" type="System">
+                            <param id="0" name="Time scale">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="7245032116224875" type="System">
+                            <param id="0" name="Layer">4</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="2227471144550443" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="4469282748014466" type="Planet_Integrity">
+                            <param id="0" name="Layer">3</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="6047802454323208" type="DNA">
+                            <param id="0" name="Layer">3</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="482303737336657" type="Skill_Button1">
+                            <param id="0" name="Instance variable">Click</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2867833612944877">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2102747685535702" type="Touch">
+                    <param id="0" name="Object">WarpTimeButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="6427374483422731" type="System">
+                    <param id="0" name="Variable">Tap</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="3618185832700303">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1344146600508215" type="System">
+                            <param id="0" name="Variable">Tap</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="6349323674840789" type="System">
+                            <param id="0" name="Time scale">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="349464509748196">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8799646115210766" type="System">
+                            <param id="0" name="Variable">Tap</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="3345906425638487" type="System">
+                            <param id="0" name="Time scale">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6744863355332692" type="System">
+                            <param id="0" name="Variable">Tap</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3299644693014033">
+            <conditions>
+                <condition id="-19" name="Pick all" sid="7238853308473605" type="System">
+                    <param id="0" name="Object">Asteroide</param>
+                </condition>
+                <condition behavior="Gravitation" id="1" name="Has been attracted" sid="8925646287312462" type="Asteroide" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="2305863259211136" type="Text_Alert">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="6816562662403588" type="Text_Alert">
+                    <param id="0" name="Text">&quot;ALERT! Orbiting Object&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="9781403131224435" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action disabled="1" id="-15" name="Set visible" sid="3783628750094943" type="Text_Alert">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7039417243673792">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2369821639265873" type="Asteroide">
+                    <param id="0" name="Object">Planet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="4354516702446794" type="Text_Alert">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="8861415630145228" type="Text_Alert">
+                    <param id="0" name="Text">&quot;IMPACT!&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="6559125529841713" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8919198567987083" type="Text_Alert">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

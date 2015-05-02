@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">Game</layout>
+        <event-sheet order="1">Game</event-sheet>
+        <event-sheet order="2">Skill_tree</event-sheet>
+        <event-sheet active="1" order="3">BG_Element</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="0" name="Skill" />
+        <family expanded="0" name="Skill_TXT" />
+        <family expanded="1" name="Bg_Element" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="object-folder/Array/" />
+        <folder expanded="0" path="object-folder/TXT/" />
+        <folder expanded="0" path="object-folder/TXT/SkillTree1/" />
+        <folder expanded="1" path="object-folder/BG/" />
+        <folder expanded="1" path="object-folder/Sprite/" />
+        <folder expanded="0" path="object-folder/Sprite/Planet_generation/" />
+        <folder expanded="0" path="object-folder/HUD/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/Acquaa/" />
+        <folder expanded="1" path="animation-folder/AttrGravit/" />
+        <folder expanded="1" path="animation-folder/crosta/" />
+        <folder expanded="1" path="animation-folder/Ghiaccio/" />
+        <folder expanded="1" path="animation-folder/eubatteri/" />
+        <folder expanded="1" path="animation-folder/gravità/" />
+        <folder expanded="1" path="animation-folder/Metalli/" />
+        <folder expanded="1" path="animation-folder/Nuvol/" />
+        <folder expanded="1" path="animation-folder/rotazione/" />
+        <folder expanded="1" path="animation-folder/ScudoMagnetico/" />
+        <folder expanded="1" path="animation-folder/vapore/" />
+        <folder expanded="1" path="animation-folder/vulcani/" />
+        <folder expanded="1" path="animation-folder/BG/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/spr_City/" />
+        <folder expanded="1" path="animation-folder/spr_Minimap/" />
+        <folder expanded="1" path="animation-folder/Asteroide/" />
+        <folder expanded="1" path="animation-folder/Linea_G/" />
+        <folder expanded="1" path="animation-folder/Planet/" />
+        <folder expanded="1" path="animation-folder/mask/" />
+        <folder expanded="1" path="animation-folder/Skill_Button1/" />
+        <folder expanded="1" path="animation-folder/Skill_Button2/" />
+        <folder expanded="1" path="animation-folder/Skill_Button3/" />
+        <folder expanded="1" path="animation-folder/HUD_BG/" />
+        <folder expanded="1" path="animation-folder/Exit_Menu/" />
+        <folder expanded="1" path="animation-folder/WarpTimeButton/" />
+        <folder expanded="1" path="animation-folder/star/" />
+        <folder expanded="1" path="animation-folder/star2/" />
+    </folders-expanded>
+</c2uistate>

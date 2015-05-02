@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game</name>
+    <events>
+        <include>BG_Element</include>
+        <include>Skill_tree</include>
+        <include>HUD</include>
+        <variable constant="0" name="Scala_asteroide" sid="712705297059748" static="0" type="number">0</variable>
+        <variable constant="0" name="edge" sid="3609834570492231" static="0" type="number">0</variable>
+        <event-group description="" disabled="1" sid="6831976458997811" title="Debug">
+            <sub-events>
+                <event-block disabled="1" sid="9491221266685745">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8625800976401076" type="System">
+                            <param id="0" name="First value">timescale</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="5687300203779355">
+                            <conditions>
+                                <condition id="0" name="On click" sid="8721228841766846" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="5390985265559655" type="System">
+                                    <param id="0" name="Object to create">Asteroide</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">Mouse.X</param>
+                                    <param id="3" name="Y">Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="2915589889768287">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7529914538652796" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Physics" id="12" name="Set world gravity" sid="7818828822688874" type="Asteroide">
+                    <param id="0" name="Gravity">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="9653667744613172" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="8978510666205031" title="ASTERIOIDE\UFO">
+            <sub-events>
+                <event-block sid="8543369639294587">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="80463394528178" type="Asteroide">
+                            <param id="0" name="Object">Asteroide</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7728642307443472">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="7758768662768599" type="System">
+                                    <param id="0" name="Object">Asteroide</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="504012266145768" type="System">
+                                    <param id="0" name="Variable">Scala_asteroide</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="6778771217451536" type="Asteroide" />
+                                <action id="-3" name="Create object" sid="9284097635467164" type="System">
+                                    <param id="0" name="Object to create">Asteroid_EXPL</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">Asteroide.X</param>
+                                    <param id="3" name="Y">Asteroide.Y</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="2509244034811814" type="System">
+                                    <param id="0" name="Object to create">Asteroide</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">Asteroide.X</param>
+                                    <param id="3" name="Y">Asteroide.Y</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="4463936982789211" type="System">
+                                    <param id="0" name="Object to create">Asteroide</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">Asteroide.X</param>
+                                    <param id="3" name="Y">Asteroide.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4612232771616534">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="9509103858284276" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="5234857251303546" type="Asteroid_EXPL">
+                            <param id="0" name="Angle">-(angle(Asteroide.X,Asteroide.Y,Planet.X,Planet.Y))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="140933982822671">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="4944962126851958" type="Asteroide" />
+                        <condition id="-7" name="Compare time" sid="8099921573026107" type="System">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Time (seconds)">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5967222510286133" type="Asteroide" />
+                    </actions>
+                </event-block>
+                <event-block sid="2447211590271877">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="2037329006093112" type="Asteroide" />
+                        <condition id="-11" name="For Each" sid="467019312712955" type="System">
+                            <param id="0" name="Object">Asteroide</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-24" name="Move to top" sid="2476114451827704" type="Asteroide" />
+                        <action behavior="Physics" id="2" name="Apply force at angle" sid="4313889766109181" type="Asteroide">
+                            <param id="0" name="Force">random(0.1,0.5)</param>
+                            <param id="1" name="Angle">random(0,360)</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="6101412778369895" type="Asteroide">
+                            <param id="0" name="Speed">random(100)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4818893958025906" type="System">
+                            <param id="0" name="Variable">Scala_asteroide</param>
+                            <param id="1" name="Value">random(0.1,1.2)</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="1148802584557761" type="Asteroide">
+                            <param id="0" name="Scale">Scala_asteroide</param>
+                        </action>
+                        <action behavior="Physics" id="16" name="Set density" sid="6828949952563042" type="Asteroide">
+                            <param id="0" name="Density">Scala_asteroide/10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6331426766142595">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="6427500375823684" type="System">
+                            <param id="0" name="Object">Asteroide</param>
+                        </condition>
+                        <condition behavior="Gravitation" id="1" name="Has been attracted" sid="3209966568179546" type="Asteroide" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5635135148985281" type="System">
+                            <param id="0" name="Object to create">Linea_G</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">Asteroide.X</param>
+                            <param id="3" name="Y">Asteroide.Y</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="6706795543032613" type="Linea_G" />
+                    </actions>
+                </event-block>
+                <event-block sid="9155100046586046">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="9002105794341535" type="System">
+                            <param id="0" name="Interval (seconds)">random(1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4480016175778406" type="System">
+                            <param id="0" name="Variable">edge</param>
+                            <param id="1" name="Value">int(random(4))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Top</comment>
+                        <event-block sid="5358323263177163">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4230191909794738" type="System">
+                                    <param id="0" name="Variable">edge</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="2735921841843052" type="System">
+                                    <param id="0" name="Object to create">Asteroide</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">random(0, LayoutWidth)</param>
+                                    <param id="3" name="Y">- Asteroide.Width/2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Bottom</comment>
+                        <event-block sid="1043022229019038">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7234849901619466" type="System">
+                                    <param id="0" name="Variable">edge</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="3686222163117738" type="System">
+                                    <param id="0" name="Object to create">Asteroide</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">random(0, LayoutWidth)</param>
+                                    <param id="3" name="Y">LayoutHeight + Asteroide.Width/2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Left</comment>
+                        <event-block sid="7855170954008187">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1230885018132894" type="System">
+                                    <param id="0" name="Variable">edge</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1227557077254012" type="System">
+                                    <param id="0" name="Object to create">Asteroide</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">- Asteroide.Width/2</param>
+                                    <param id="3" name="Y">random(0, LayoutHeight)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Right</comment>
+                        <event-block sid="4984345701409725">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2632207186867847" type="System">
+                                    <param id="0" name="Variable">edge</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1840121936524322" type="System">
+                                    <param id="0" name="Object to create">Asteroide</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">LayoutWidth + Asteroide.Width/2</param>
+                                    <param id="3" name="Y">random(0, LayoutHeight)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="986722876675291" title="Danni Integrità">
+            <sub-events>
+                <event-block sid="7784050640725125">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4493874596373563" type="Asteroide">
+                            <param id="0" name="Object">Planet</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-4" name="Set position to another object" sid="945467771131791" type="Danno_integrità">
+                            <param id="0" name="Object">Asteroide</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5234983820047297" type="System">
+                            <param id="0" name="Object to create">Danno_integrità</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">Asteroide.X</param>
+                            <param id="3" name="Y">Asteroide.Y</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9799289504675574" type="Danno_integrità">
+                            <param id="0" name="Text">&quot;- &quot;&amp;round(Asteroide.Physics.Density*100)</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="2737607891097021" type="System">
+                            <param id="0" name="Variable">integrità</param>
+                            <param id="1" name="Value">round(Asteroide.Physics.Density*100)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6636343551778459" type="System">
+                            <param id="0" name="Object to create">Asteroid_EXPL</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">Asteroide.X</param>
+                            <param id="3" name="Y">Asteroide.Y</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9847275158305403" type="Asteroide" />
+                        <action id="-16" name="Wait" sid="9075414446419117" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5349432531191497" type="Danno_integrità" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <variable comment="Sea tile" constant="0" name="C_SEA" sid="5860857886849629" static="0" type="number">0</variable>
+        <variable comment="Land Tile" constant="0" name="C_LAND" sid="3929394985854061" static="0" type="number">1</variable>
+        <variable comment="Grass Tile" constant="0" name="C_GRASS" sid="5515968559984499" static="0" type="number">2</variable>
+        <event-group description="" disabled="1" sid="5260224557753629" title="Planet_Generation">
+            <sub-events>
+                <event-block disabled="1" sid="5782100505637108">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="6843007562904124" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="Number of seed locations for islands" constant="0" name="IslandSeeds" sid="6099187727302808" static="0" type="number">60</variable>
+                        <variable comment="Size of an island" constant="0" name="IslandSize" sid="9251142987917195" static="0" type="number">6000</variable>
+                        <variable comment="Width of Planet Map" constant="0" name="PlanetWidth" sid="3018413854402642" static="0" type="number">175</variable>
+                        <variable comment="Height of Planet Map" constant="0" name="PlanetHeight" sid="8220751101204067" static="0" type="number">80</variable>
+                        <variable comment="Dimensions of a mini-map sprite" constant="0" name="MMSpriteSize" sid="5127753044761439" static="0" type="number">4</variable>
+                        <variable comment="Random Direction in X-axis" constant="0" name="RandDirectionX" sid="1645095783100651" static="0" type="number">0</variable>
+                        <variable comment="Random Direction in Y-axis" constant="0" name="RandDirectionY" sid="4955842615831498" static="0" type="number">0</variable>
+                        <variable comment="Dimensions of a sprite for the Planet Map" constant="0" name="SpriteSize" sid="7915732809435265" static="0" type="number">4</variable>
+                        <event-block disabled="1" sid="6990621742987324">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Set size" sid="5101059860851251" type="ar_LandSea">
+                                    <param id="0" name="Width">PlanetWidth</param>
+                                    <param id="1" name="Height">PlanetHeight</param>
+                                    <param id="2" name="Depth">1</param>
+                                </action>
+                                <action id="1" name="Set size" sid="6180945278020705" type="ar_IslandSeed">
+                                    <param id="0" name="Width">IslandSeeds</param>
+                                    <param id="1" name="Height">2</param>
+                                    <param id="2" name="Depth">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="3811315386720547">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="5928143626181817" type="ar_LandSea">
+                                    <param id="0" name="Axes">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set at XY" sid="2624046444930585" type="ar_LandSea">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Value">C_SEA</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="3648373331124574">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="7414478914580003" type="ar_IslandSeed">
+                                    <param id="0" name="Axes">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set at XY" sid="5680140020466421" type="ar_IslandSeed">
+                                    <param id="0" name="X">loopindex</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Value">floor(Random(PlanetWidth))</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="5773500744871006" type="ar_IslandSeed">
+                                    <param id="0" name="X">loopindex</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">floor(Random(PlanetHeight))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="7828126352229801">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="4022255693765107" type="System">
+                                    <param id="0" name="Count">IslandSize</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="2293808913048101">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="2252810728021631" type="System">
+                                            <param id="0" name="Count">IslandSeeds</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="3" name="Set at XY" sid="5431660441051489" type="ar_LandSea">
+                                            <param id="0" name="X">ar_IslandSeed.At(loopindex, 0)</param>
+                                            <param id="1" name="Y">ar_IslandSeed.At(loopindex, 1)</param>
+                                            <param id="2" name="Value">C_LAND</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="1371979357363908" type="System">
+                                            <param id="0" name="Variable">RandDirectionX</param>
+                                            <param id="1" name="Value">floor(random(3)) - 1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="559246725469117" type="System">
+                                            <param id="0" name="Variable">RandDirectionY</param>
+                                            <param id="1" name="Value">floor(random(3)) - 1</param>
+                                        </action>
+                                        <action id="3" name="Set at XY" sid="4970074914648567" type="ar_IslandSeed">
+                                            <param id="0" name="X">loopindex</param>
+                                            <param id="1" name="Y">0</param>
+                                            <param id="2" name="Value">ar_IslandSeed.At(loopindex, 0) + RandDirectionX</param>
+                                        </action>
+                                        <action id="3" name="Set at XY" sid="5402609189290553" type="ar_IslandSeed">
+                                            <param id="0" name="X">loopindex</param>
+                                            <param id="1" name="Y">1</param>
+                                            <param id="2" name="Value">ar_IslandSeed.At(loopindex, 1) + RandDirectionY</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block disabled="1" sid="5528470281021715">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="661195456327876" type="ar_LandSea">
+                                    <param id="0" name="Axes">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="4302766502114584">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="5882733778465943" type="ar_LandSea">
+                                            <param id="0" name="X">self.CurX</param>
+                                            <param id="1" name="Y">self.CurY</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">C_SEA</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="1139632204309853" type="System">
+                                            <param id="0" name="Object to create">spr_Minimap</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">(ar_LandSea.CurX * MMSpriteSize)+Planet.ImagePointX(1)</param>
+                                            <param id="3" name="Y">(ar_LandSea.CurY * MMSpriteSize)+Planet.ImagePointY(1)+20</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="7720408934291662" type="spr_Minimap">
+                                            <param id="0" name="Animation">&quot;MM2&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="6861313736559133">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="2690691654581857" type="ar_LandSea">
+                                            <param id="0" name="X">self.CurX</param>
+                                            <param id="1" name="Y">self.CurY</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">C_LAND</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="1588459194066125" type="System">
+                                            <param id="0" name="Object to create">spr_Minimap</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">(ar_LandSea.CurX *  MMSpriteSize)+Planet.ImagePointX(1)</param>
+                                            <param id="3" name="Y">(ar_LandSea.CurY * MMSpriteSize) +Planet.ImagePointY(1)+20</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="1619546413575199" type="spr_Minimap">
+                                            <param id="0" name="Animation">&quot;MM3&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="5330646638657911">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="5806813582175413" type="ar_LandSea">
+                                            <param id="0" name="X">self.CurX</param>
+                                            <param id="1" name="Y">self.CurY</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">C_LAND</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="8937010651112943" type="System">
+                                            <param id="0" name="Object to create">spr_Minimap</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="X">(ar_LandSea.CurX *  MMSpriteSize)+Planet.X</param>
+                                            <param id="3" name="Y">(ar_LandSea.CurY * MMSpriteSize) +Planet.Y</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="8845417441993033" type="spr_Minimap">
+                                            <param id="0" name="Animation">&quot;MM1&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>CITY/PROPS.</comment>
+                        <event-block disabled="1" sid="4903428177005407">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="1428923331084288" type="System">
+                                    <param id="0" name="Count">100</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="3485785062741972">
+                                    <conditions>
+                                        <condition id="-23" name="While" sid="2619004640434142" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="1867313833088434" type="System">
+                                            <param id="0" name="Variable">RandDirectionX</param>
+                                            <param id="1" name="Value">floor(Random(PlanetWidth))</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="5599080823094498" type="System">
+                                            <param id="0" name="Variable">RandDirectionY</param>
+                                            <param id="1" name="Value">floor(Random(PlanetHeight))</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block disabled="1" sid="6613671231099016">
+                                            <conditions>
+                                                <condition id="1" name="Compare at XY" sid="5106059853987344" type="ar_LandSea">
+                                                    <param id="0" name="X">RandDirectionX</param>
+                                                    <param id="1" name="Y">RandDirectionY</param>
+                                                    <param id="2" name="Comparison">0</param>
+                                                    <param id="3" name="Value">C_LAND</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="2848075980216594" type="System">
+                                                    <param id="0" name="Object to create">spr_City</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">RandDirectionX * MMSpriteSize+Planet.ImagePointX(1)</param>
+                                                    <param id="3" name="Y">RandDirectionY * MMSpriteSize+Planet.ImagePointY(1)+20</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="6919773205004399" type="spr_Minimap">
+                                                    <param id="0" name="Animation">&quot;MM1&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-24" name="Stop loop" sid="577722027176004" type="System" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
